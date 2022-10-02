@@ -19,20 +19,20 @@ class HomeDataModel
   {
     json['banners'].forEach((element)
     {
-      banners.add(element);
+      banners.add(BannerModel.fromJson(element));
     });
 
     json['products'].forEach((element)
     {
-      products.add(element);
+      products.add(ProductModel.fromJson(element));
     });
   }
 }
 
 class BannerModel
 {
-  late int id;
-  late String image;
+  int? id;
+  String? image;
 
   BannerModel.fromJson(Map<String, dynamic> json)
   {
@@ -43,26 +43,14 @@ class BannerModel
 
 class ProductModel
 {
-  late int id;
-  late dynamic price;
-  late dynamic oldPrice;
-  late dynamic discount;
-  late String image;
-  late String name;
+  int? id;
+  dynamic price;
+  dynamic oldPrice;
+  dynamic discount;
+  String? image;
+  String? name;
   bool? inFavorites;
   bool? inCart;
-
-  ProductModel(
-  {
-    required this.id,
-    required this.price,
-    required this.oldPrice,
-    required this.discount,
-    required this.image,
-    required this.name,
-    this.inFavorites,
-    this.inCart,
-  });
 
   ProductModel.fromJson(Map<String, dynamic> json)
   {
