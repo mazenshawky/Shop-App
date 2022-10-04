@@ -30,7 +30,7 @@ void main()
       bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
       token = CacheHelper.getData(key: 'token');
 
-      uId = CacheHelper.getData(key: 'uId');
+      print(token);
 
       if(onBoarding != null)
       {
@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget
           ),
         ),
         BlocProvider(
-          create: (context) => ShopCubit()..getHomeData(),
+          create: (context) => ShopCubit()..getHomeData()..getCategories()..getFavorites()..getUserData(),
         ),
       ],
       child: BlocConsumer<AppCubit, AppStates>(

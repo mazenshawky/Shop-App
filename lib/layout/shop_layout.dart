@@ -17,7 +17,7 @@ class ShopLayout extends StatelessWidget
 
         return Scaffold(
           appBar: AppBar(
-            title: Text(
+            title: const Text(
               'Salla',
             ),
             actions: [
@@ -25,7 +25,7 @@ class ShopLayout extends StatelessWidget
               onPressed: (){
                 navigateTo(context, SearchScreen());
               },
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
           ),
             ],
           ),
@@ -36,7 +36,7 @@ class ShopLayout extends StatelessWidget
               cubit.changeBottom(index);
             },
             currentIndex: cubit.currentIndex,
-            items: [
+            items: const [
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home,

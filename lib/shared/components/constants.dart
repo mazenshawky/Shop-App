@@ -4,7 +4,7 @@ import 'components.dart';
 
 void signOut(context)
 {
-  CacheHelper.removeData(key: 'uId').then((value) {
+  CacheHelper.removeData(key: 'token').then((value) {
     if(value)
     {
       navigateAndFinish((context), ShopLoginScreen(),);
@@ -13,5 +13,3 @@ void signOut(context)
 }
 
 String? token = '';
-
-String? uId = '';
